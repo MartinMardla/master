@@ -74,7 +74,7 @@ public class Shape {
         public Integer diameter;
         public Integer diagonal;
 
-        @Override
+    //    @Override
         public boolean equals(ShapeClass other)  {
             return this.circumference == other.circumference &&
                     this.radius.equals(other.radius) &&
@@ -84,7 +84,7 @@ public class Shape {
         }
     }
 
-    Class Circle a  = new Class Circle();
+  /*  Class Circle a  = new Class Circle();
     Class Rectangle b = new Class Rectangle();
-    a.equals(b)
+    a.equals(b)   */
 }
