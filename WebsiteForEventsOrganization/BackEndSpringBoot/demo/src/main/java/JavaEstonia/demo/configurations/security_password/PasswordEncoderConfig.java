@@ -1,17 +1,17 @@
 package JavaEstonia.demo.configurations.security_password;
 
+import JavaEstonia.demo.repositories.PasswordEncoderRepository;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.bcrypt.BCrypt;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Configuration
 public class PasswordEncoderConfig {
 
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new PasswordEncoder() {
+  /*  @Bean
+    public PasswordEncoderRepository passwordEncoder() {
+        return new PasswordEncoderRepository() {
 
             @Override
             public String encode(CharSequence rawPassword) {
@@ -25,5 +25,5 @@ public class PasswordEncoderConfig {
                 return BCrypt.checkpw(rawPassword.toString(), encodedPassword);
             }
         };
-    }
+    }*/
 }
