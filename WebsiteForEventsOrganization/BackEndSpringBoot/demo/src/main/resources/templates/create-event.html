@@ -5,10 +5,30 @@
     <title>Create Event</title>
 </head>
 <body>
-<span th:text="${user}"></span>
-<form th:action="@{/events/save-event}"th:object="${event}" method="post">
-    <textarea name="text"></textarea>
-    <input type="submit">
+<!-- <span th:text="${user}"></span>
+<form th:action="@{/events/save-event}"th:object="${event}" method="post"> -->
+
+<form name="f" th:action="@{/create-event.html}" th:object="${user}" method="post">
+    <P>
+
+        <label for="eventname">Name of the event: </label>
+        <input type="text" id="eventname"><BR>
+        <label for="eventaddress">Address of the event: </label>
+        <input type="text" id="eventaddress"><BR>
+        <label for="eventdate">Date of event time: </label>
+        <input type="text" id="eventdate"><BR>
+        <label for="eventtime">Time of the event: </label>
+        <input type="text" id="eventtime"><BR>
+        <label for="access">Private or public: </label>
+        <input type="text" id="access"><BR>
+        <label for="organizer">Organizer: </label>
+        <input type="text" id="organizer"><BR>
+        <label for="eventdescription">Describe your event: </label>
+        <input type="text" id="eventdescription"><BR>
+
+
+        <input type="submit" value="Send"> <INPUT type="reset">
+    </P>
 </form>
 </body>
 </html>

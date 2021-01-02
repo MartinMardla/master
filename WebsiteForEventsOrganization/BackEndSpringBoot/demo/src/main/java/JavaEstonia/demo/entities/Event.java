@@ -14,13 +14,15 @@ public class Event {
     @GeneratedValue
     @Id
     Long Id;
-    Date eventtime;
     String eventname;
     String eventaddress;
+    Date eventdate;
+    String eventtime;
     String access;
     String organizer;
     Date created;
     Date updated;
+    String eventdescription;
 
     @ManyToOne
     @JoinColumn(name = "user_id")

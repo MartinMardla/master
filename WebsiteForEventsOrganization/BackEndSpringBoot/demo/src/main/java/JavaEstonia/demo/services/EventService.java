@@ -3,6 +3,7 @@ package JavaEstonia.demo.services;
 import JavaEstonia.demo.entities.Event;
 import JavaEstonia.demo.repositories.EventRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,9 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class EventService {
+
+    @Autowired
+    EventRepository eventRepository;
 
     final EventRepository repository;
     final UserService service;
