@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Event</title>
+</head>
+<body>
+<form th:action="@{events/save-event}" th:object="${event}" method="post">
+    <input type="hidden" name="id" th:value="${event.id}">
+    <textarea name="text">[[@{event.text}]]</textarea>
+    <input type="submit">
+</form>
+
+</body>
+</html>
