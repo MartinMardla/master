@@ -5,8 +5,8 @@ import JavaEstonia.demo.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-@Service
 @RequiredArgsConstructor
+@Service
 public class UserService {
 
     final UserRepository repository;

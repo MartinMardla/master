@@ -19,6 +19,8 @@ public class Event {
     String eventaddress;
     String access;
     String organizer;
+    Date created;
+    Date updated;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
