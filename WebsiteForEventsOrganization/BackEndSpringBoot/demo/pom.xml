@@ -103,6 +103,14 @@
 			<version>3.0.0</version>
 		</dependency>
 
+		<dependency>
+			<groupId>com.github.jpaoletti</groupId>
+			<artifactId>jpm-core</artifactId>
+			<version>1.5.3</version>
+		</dependency>
+		<!-- Thanks for using https://jar-download.com -->
+
+
 
 	</dependencies>
 
