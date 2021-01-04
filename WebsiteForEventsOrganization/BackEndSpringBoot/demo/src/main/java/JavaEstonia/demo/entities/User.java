@@ -22,10 +22,13 @@ public class User {
     @Column(name = "username")
     String username;
     String password;
-    String emailID;
+    String emailId;
     String firstname;
     String lastname;
     Date dateOfBirth;
+
+    @Column(name = "reset_password_token")
+    String resetPasswordToken;
 
     @OneToMany(mappedBy = "user")
     List<Event> eventList;

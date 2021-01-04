@@ -42,6 +42,8 @@ public class UserAccountController {
     public ModelAndView registerUser(ModelAndView modelAndView, User user)
     {
 
+        //For looking is there already same email
+
         User existingUser = userRepository.findByEmailIdIgnoreCase(user.getEmailId());
         if(existingUser != null)
         {
