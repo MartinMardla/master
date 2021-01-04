@@ -15,7 +15,9 @@ public class RegisterService {
     UserRepository userRepository;
 
     public User createUser(User user){
-        user.setPassword(encoder.encode(user.getPassword()));
+        user.setPassword("Test");
+
+    //    user.setPassword(encoder.encode(user.getPassword()));
         return userRepository.save(user);
     }
 }
