@@ -12,11 +12,6 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class LoginController {
 
-  /*  @GetMapping("response-text")
-    public @ResponseBody String getResponse() {
-        return "Hello Text";
-    }*/
-
     final RegisterService registerService;
 
     @GetMapping("/login")
@@ -32,6 +27,8 @@ public class LoginController {
      //   model.addAttribute("user", registerService.createUser(user));
         return "created-user"; */
 
+
+    // For sending activation link to new user and controlling is it unused email
     @PostMapping("/register")
     String createUser(@ModelAttribute User user, Model model) {
 

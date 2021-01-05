@@ -14,9 +14,12 @@ public class UserService {
 
     final UserRepository repository;
 
-    public User findByUsername(String username) {return repository.findByUsername(username);}
+    public User findByUsername(String username) {
+        return repository.findByUsername(username);
+    }
 
-    // For password reset
+
+ /*   // For password reset
 
     @Autowired
     private UserRepository userRepository;
@@ -43,6 +46,6 @@ public class UserService {
 
         user.setResetPasswordToken(null);
         userRepository.save(user);
-    }
+    }*/
 
 }

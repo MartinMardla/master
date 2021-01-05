@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+// For sending activation link to new user and controlling is it unused email
 @Controller
 public class UserAccountController {
 

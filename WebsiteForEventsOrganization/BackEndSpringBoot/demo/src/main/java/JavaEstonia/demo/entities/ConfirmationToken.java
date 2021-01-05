@@ -13,6 +13,7 @@ import java.util.Date;
 @Entity
 @Table(name="confirmationToken")
 
+// For sending activation link to new user and controlling is it unused email
 public class ConfirmationToken {
 
     @Id

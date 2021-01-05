@@ -27,8 +27,9 @@ public class User {
     String lastname;
     Date dateOfBirth;
 
+    /*// for forgot password
     @Column(name = "reset_password_token")
-    String resetPasswordToken;
+    String resetPasswordToken; */
 
     @OneToMany(mappedBy = "user")
     List<Event> eventList;

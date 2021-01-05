@@ -7,6 +7,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
+// For sending activation link to new user and controlling is it unused email
 @Service("emailService")
 public class EmailService {
 
