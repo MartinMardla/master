@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-@Controller
+/*@Controller
 @RequiredArgsConstructor
 public class LoginController {
 
@@ -29,7 +29,7 @@ public class LoginController {
 
 
     // For sending activation link to new user and controlling is it unused email
-    @PostMapping("/register")
+ /*   @PostMapping("/register")
     String createUser(@ModelAttribute User user, Model model) {
 
         if(null== UserRepository.findByEmail(user.getEmailId()))
@@ -42,4 +42,4 @@ public class LoginController {
         }
 
     }
-}
+}*/
