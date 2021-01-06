@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Events</title>
+</head>
+<body>
+<script>
+    redirectEdit = function (id){
+        window.location.replace('/events/edit-event/' + id);
+    };
+    deleteEvent = function (id){
+        window.location.replace('/events/delete-event' + id);
+    };
+</script>
+<div th:each="event : ${events}">
+    <p th:text="${event.text}"></p>
+    <p>created by: [[${post.user.username}]]</p>
+    <button th:onclick="'javascript:redirectEdit(' + ${event.id} + ')'">Edit</button>
+    <button th:onclick="'javascript:deleteEvent(' + ${event.id} + ')'">Delete</button>
+</div>
+
+</body>
+</html>
