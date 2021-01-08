@@ -11,12 +11,12 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-@Table(name = "users")
+//@Table(name = "users")
 public class User {
 
     @GeneratedValue
     @Id
-    @Column(name = "user_id")
+  //  @Column(name = "user_id")
     //@Column(unique = true)
     Long id;
     @Column(name = "username")
@@ -27,8 +27,8 @@ public class User {
     String lastname;
     Date dateOfBirth;
 
-    /*// for forgot password
-    @Column(name = "reset_password_token")
+    // for forgot password
+  /*  @Column(name = "reset_password_token")
     String resetPasswordToken; */
 
     @OneToMany(mappedBy = "user")

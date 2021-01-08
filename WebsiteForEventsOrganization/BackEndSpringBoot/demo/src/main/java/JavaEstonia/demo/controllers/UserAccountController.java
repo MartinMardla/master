@@ -9,8 +9,10 @@ import JavaEstonia.demo.repositories.ConfirmationTokenRepository;
 import JavaEstonia.demo.repositories.UserRepository;
 import JavaEstonia.demo.services.EmailService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,10 +21,15 @@ import org.springframework.web.servlet.ModelAndView;
 // For sending activation link to new user and controlling is it unused email
 @Controller
 public class UserAccountController {
-
+    // login lehe jaoks
+    @GetMapping("/login")
+    String login() {return "login"; }
+    // For sending activation link to new user and controlling is it unused email
+    @Qualifier("userRepository") //added qualifier
     @Autowired
     private UserRepository userRepository;
 
+    @Qualifier("confirmationTokenRepository") //added gualifier
     @Autowired
     private ConfirmationTokenRepository confirmationTokenRepository;
 
@@ -32,7 +39,7 @@ public class UserAccountController {
     @RequestMapping(value="/register", method = RequestMethod.GET)
     public ModelAndView displayRegistration(ModelAndView modelAndView, User user)
     {
-        modelAndView.addObject("userEntity", user);
+        modelAndView.addObject("user", user);
         modelAndView.setViewName("register");
         return modelAndView;
     }

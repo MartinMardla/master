@@ -1,12 +1,19 @@
 package JavaEstonia.demo.controllers;
 
+import JavaEstonia.demo.entities.ConfirmationToken;
 import JavaEstonia.demo.entities.User;
+import JavaEstonia.demo.repositories.ConfirmationTokenRepository;
 import JavaEstonia.demo.repositories.UserRepository;
+import JavaEstonia.demo.services.EmailService;
 import JavaEstonia.demo.services.RegisterService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 /*@Controller
 @RequiredArgsConstructor
@@ -20,12 +27,12 @@ public class LoginController {
     @GetMapping("/register")
     String register() {return "register"; }
 
-   /* @PostMapping("/register")
+    @PostMapping("/register")
     String createUser(@ModelAttribute User user, Model model) {
         System.out.println("DEBUG kasutaja eesnimi: "+ user.getFirstname());
         registerService.createUser(user);
      //   model.addAttribute("user", registerService.createUser(user));
-        return "created-user"; */
+        return "created-user";
 
 
     // For sending activation link to new user and controlling is it unused email
@@ -39,7 +46,8 @@ public class LoginController {
         }else{
 
             return "This e-mail is already in use!";
-        }
+        }*/
 
-    }
+/*   }
+
 }*/

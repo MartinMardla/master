@@ -10,10 +10,7 @@ import org.springframework.stereotype.Repository;
 public interface UserRepository extends CrudRepository<User, String>{
 
     // For sending activation link to new user and controlling is it unused email
-    public static User findByEmail(String emailId) {
-        return null;
-    }
-
+    User findByEmailId(String emailId);
 
     User findByUsername(String username);
 
