@@ -23,22 +23,17 @@ public class User {
     @Column(name = "username")
     String username;
     String password;
-    String emailId;
+    String email;
     String firstname;
     String lastname;
     Date dateOfBirth;
+    Boolean enabled;
 
     // for forgot password
-    @Column(name = "reset_password_token")
+    @Column(name = "reset-password-token")
     String resetPasswordToken;
 
     @OneToMany(mappedBy = "user")
     List<Event> eventList;
 
-    public String getEmailId() {
-        return null;
-    }
-
-    public void setEnabled(boolean b) {
-    }
 }

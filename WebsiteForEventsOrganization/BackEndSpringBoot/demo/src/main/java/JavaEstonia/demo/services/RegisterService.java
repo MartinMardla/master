@@ -6,8 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-
 @Service
 public class RegisterService {
     @Autowired
@@ -18,7 +16,7 @@ public class RegisterService {
 
     public User createUser(User user){
         //-- pärime andmebaasist, kas sellise emailiga kasutaja on juba olemas...
-        User found = UserRepository.findByEmail(user.getEmailId());
+        User found = userRepository.findByEmail(user.getEmail());
 
         //-- Kui tagastatud user (found) on null, siis sellist emaili veel pole andmebaases
         if(found == null)

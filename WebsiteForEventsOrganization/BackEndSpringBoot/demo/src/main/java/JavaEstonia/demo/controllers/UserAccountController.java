@@ -1,8 +1,5 @@
 package JavaEstonia.demo.controllers;
 
-/*import lombok.Getter;
-import lombok.Setter;
-
 import JavaEstonia.demo.entities.ConfirmationToken;
 import JavaEstonia.demo.entities.User;
 import JavaEstonia.demo.repositories.ConfirmationTokenRepository;
@@ -12,18 +9,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 // For sending activation link to new user and controlling is it unused email
-/*@Controller
+@Controller
+@RequestMapping("/user")
 public class UserAccountController {
-
-    @GetMapping("/login")
-    String login() {return "login"; }
 
     @Qualifier("userRepository") //added qualifier
     @Autowired
@@ -37,9 +31,8 @@ public class UserAccountController {
     private EmailService emailService;
 
     @RequestMapping(value="/register", method = RequestMethod.GET)
-    public ModelAndView displayRegistration(ModelAndView modelAndView, User user)
+    public ModelAndView displayRegistration(ModelAndView modelAndView)
     {
-        modelAndView.addObject("user", user);
         modelAndView.setViewName("register");
         return modelAndView;
     }
@@ -52,7 +45,8 @@ public class UserAccountController {
 
         //For looking is there already same email
 
-        User existingUser = userRepository.findByEmailIdIgnoreCase(user.getEmailId());
+        String email = user.getEmail().toLowerCase();
+        User existingUser = userRepository.findByEmail(user.getEmail());
         if(existingUser != null)
         {
             modelAndView.addObject("message","This email already exists!");
@@ -67,15 +61,15 @@ public class UserAccountController {
             confirmationTokenRepository.save(confirmationToken);
 
             SimpleMailMessage mailMessage = new SimpleMailMessage();
-            mailMessage.setTo(user.getEmailId());
+            mailMessage.setTo(user.getEmail());
             mailMessage.setSubject("Complete Registration!");
-            mailMessage.setFrom("YOUR EMAIL ADDRESS");
+            mailMessage.setFrom("martin.mardla@gmail.com");
             mailMessage.setText("To confirm your account, please click here : "
                     +"http://localhost:8080/confirm-account?token="+confirmationToken.getConfirmationToken());
 
             emailService.sendEmail(mailMessage);
 
-            modelAndView.addObject("emailId", user.getEmailId());
+            modelAndView.addObject("emailId", user.getEmail());
 
             modelAndView.setViewName("successfulRegisteration");
         }
@@ -91,8 +85,8 @@ public class UserAccountController {
 
         if(token != null)
         {
-            User user = userRepository.findByEmailIdIgnoreCase(token.getUser().getEmailId());
-            user.setEnabled(true);
+            User user = userRepository.findByEmail(token.getUser().getEmail());
+            //user.setEnabled(true);
             userRepository.save(user);
             modelAndView.setViewName("accountVerified");
         }
@@ -104,4 +98,4 @@ public class UserAccountController {
 
         return modelAndView;
     }
-} */
+}

@@ -11,12 +11,8 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequiredArgsConstructor
+@RequestMapping("/login")
 public class LoginController {
-
-  /*  @GetMapping("response-text")
-    public @ResponseBody String getResponse() {
-        return "Hello Text";
-    }*/
 
     final RegisterService registerService;
 
@@ -32,8 +28,10 @@ public class LoginController {
     String createUser(@ModelAttribute User user, Model model) {
         User newUser = registerService.createUser(user);
         if( newUser != null)
-            return "created-user";  //-- kasutaja oli uus, lisati andmebaasi
+            return "created-user";  //-- new user, added to database
         else
-            return "user-exists"; //-- sellise emailiga kasutaja oli olemas.
+            return "user-exists"; //-- there is already user with that email
+
+
     }
 }
