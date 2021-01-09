@@ -19,7 +19,8 @@ public class UserService {
     }
 
 
- /*   // For password reset
+
+   // For password reset
 
     @Autowired
     private UserRepository userRepository;
@@ -31,7 +32,7 @@ public class UserService {
             user.setResetPasswordToken(token);
             userRepository.save(user);
         } else {
-            throw new UserNotFoundException("Could not find any customer with the email " + emailId);
+            throw new UserNotFoundException();
         }
     }
 
@@ -46,6 +47,6 @@ public class UserService {
 
         user.setResetPasswordToken(null);
         userRepository.save(user);
-    }*/
+    }
 
 }

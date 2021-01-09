@@ -1,6 +1,6 @@
 package JavaEstonia.demo.controllers;
 
-import lombok.Getter;
+/*import lombok.Getter;
 import lombok.Setter;
 
 import JavaEstonia.demo.entities.ConfirmationToken;
@@ -19,12 +19,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 // For sending activation link to new user and controlling is it unused email
-@Controller
+/*@Controller
 public class UserAccountController {
-    // login lehe jaoks
+
     @GetMapping("/login")
     String login() {return "login"; }
-    // For sending activation link to new user and controlling is it unused email
+
     @Qualifier("userRepository") //added qualifier
     @Autowired
     private UserRepository userRepository;
@@ -104,4 +104,4 @@ public class UserAccountController {
 
         return modelAndView;
     }
-}
+} */

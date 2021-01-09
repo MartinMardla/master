@@ -1,5 +1,5 @@
 package JavaEstonia.demo.controllers;
-/*
+
 import JavaEstonia.demo.entities.Utility;
 import JavaEstonia.demo.services.UserService;
 import jpaoletti.jpm.security.core.UserNotFoundException;
@@ -24,13 +24,13 @@ public class ForgotPasswordController {
     private UserService userService;
 
     @GetMapping("/forgot-password")
-    public void showForgotPasswordForm() {
+    public String showForgotPasswordForm() {
         return "forgot-password-form";
     }
 
-    @PostMapping("/forgot-password")
+  /*  @PostMapping("/forgot-password")
     public void processForgotPassword() {
-    }
+    }*/
 
     public void sendEmail(){
 
@@ -62,10 +62,11 @@ public class ForgotPasswordController {
 
         } catch (UserNotFoundException ex) {
             model.addAttribute("error", ex.getMessage());
-        } catch (UnsupportedEncodingException | MessagingException e) {
-            model.addAttribute("error", "Error while sending email");
         }
 
         return "forgot-password-form";
     }
-}*/
+
+    private void sendEmail(String email, String resetPasswordLink) {
+    }
+}

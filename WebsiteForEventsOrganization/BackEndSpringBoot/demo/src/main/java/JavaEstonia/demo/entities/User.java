@@ -14,7 +14,8 @@ import java.util.List;
 //@Table(name = "users")
 public class User {
 
-    @GeneratedValue
+    @GeneratedValue(strategy=GenerationType.AUTO)
+  //  @GeneratedValue
     @Id
   //  @Column(name = "user_id")
     //@Column(unique = true)
@@ -28,8 +29,8 @@ public class User {
     Date dateOfBirth;
 
     // for forgot password
-  /*  @Column(name = "reset_password_token")
-    String resetPasswordToken; */
+    @Column(name = "reset_password_token")
+    String resetPasswordToken;
 
     @OneToMany(mappedBy = "user")
     List<Event> eventList;
