@@ -14,11 +14,6 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/login")
 public class LoginController {
 
-  /*  @GetMapping("response-text")
-    public @ResponseBody String getResponse() {
-        return "Hello Text";
-    }*/
-
     final RegisterService registerService;
 
     @GetMapping("/login")
