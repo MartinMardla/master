@@ -30,7 +30,7 @@ public class User {
     Boolean enabled;
 
     // for forgot password
-    @Column(name = "reset-password-token")
+    @Column(name = "reset_password_token")
     String resetPasswordToken;
 
     @OneToMany(mappedBy = "user")
